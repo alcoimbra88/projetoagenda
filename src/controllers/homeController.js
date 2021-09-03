@@ -7,6 +7,5 @@ exports.index = async (req, res) => {
   } else {
   const contatos = await Contato.buscaContatos();
   res.render('index', {contatos});
-}
-
 };
+}
