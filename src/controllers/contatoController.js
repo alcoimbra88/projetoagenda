@@ -20,7 +20,7 @@ exports.delete = async function (req, res) {
 
 exports.register = async (req, res) => {
     const contato = new Contato(req.body);
-    await contato.register();
+    await contato.register(req.session.user.email);
 
 
     try {
@@ -67,7 +67,4 @@ exports.edit = async function (req, res) {
         console.log(e);
         res.render('404');
     };
-
-
-
 }
